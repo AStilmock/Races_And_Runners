@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_10_212355) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_11_175306) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_10_212355) do
     t.integer "length"
     t.boolean "loop"
     t.boolean "overnight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "runners", force: :cascade do |t|
+    t.string "name"
+    t.string "shoes"
+    t.boolean "spikes"
+    t.boolean "team"
+    t.integer "races_completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

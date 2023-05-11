@@ -5,7 +5,7 @@ class RacesController < ApplicationController
 
   def show
     # require 'pry'; binding.pry
-    @race = Race.find(params[id])
-    require 'pry'; binding.pry
+    @race = Race.find(params[:id])
+    # require 'pry'; binding.pry
   end
 end
