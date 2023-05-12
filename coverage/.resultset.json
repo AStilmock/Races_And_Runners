@@ -1,0 +1,42 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/stillymonster/2Mod/2Mod_Projects/Races_And_Runners/races_and_runners/app/controllers/races_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/stillymonster/2Mod/2Mod_Projects/Races_And_Runners/races_and_runners/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/stillymonster/2Mod/2Mod_Projects/Races_And_Runners/races_and_runners/app/models/race.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/stillymonster/2Mod/2Mod_Projects/Races_And_Runners/races_and_runners/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1683854933
+  }
+}

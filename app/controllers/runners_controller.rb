@@ -3,7 +3,7 @@ class RunnersController < ApplicationController
     @runners = Runner.all
   end
 
-  # def show
-  #   @runner = Runner.find(params[id])
-  # end
+  def show
+    @runner = Runner.find(params[:id])
+  end
 end
