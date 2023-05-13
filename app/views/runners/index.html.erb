@@ -1,6 +1,11 @@
+<%= link_to 'Runners Page', "/runners#index" %>
+<%= link_to 'Races Page', "/races#index" %>
 <h1>Runners</h1>
 <% @runners.each do |runner| %>
   <h3><%= runner.name %></h3>
-  <p>Races Completed: <%= runner.races_completed %></p>
-  <p>Shoes: <%= runner.shoes %></p>
+<p>Shoes:           <%= runner.shoes %></p>
+<p>Spikes:          <%= runner.spikes %></p>
+<p>Team:            <%= runner.team %></p>
+<p>Races Completed: <%= runner.races_completed %></p>
+<p>Race ID:         <%= runner.race_id %></p>
 <% end %>

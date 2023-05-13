@@ -1,7 +1,7 @@
+<%= link_to 'Runners Page', "/runners#index" %>
+<%= link_to 'Races Page', "/races#index" %>
 <h1>Races</h1>
 <% @races.each do |race| %>
   <h3><%= race.location %></h3>
-  <p>Terrain: <%= race.terrain %></p>
-  <p>Weather: <%= race.weather %></p>
-  <p>Length: <%= race.length %></p>
+  <p><%= race.created_at %></p>
 <% end %>
