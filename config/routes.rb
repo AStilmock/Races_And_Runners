@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get "/races", to: "races#index"
   get "/races/:id", to: "races#show"
   get "/runners", to: "runners#index"
+  get "/runners/:id", to: "runners#show"
+  get "races/:id/runners", to: "races_runners#index"
 end

@@ -1,9 +1,9 @@
-require "rails_helper"
+# require "rails_helper"
 
-describe Runner, type: :model do
-  describe "instance methods" do
-    describe "#runner" do
+# describe Runner, type: :model do
+#   describe "instance methods" do
+#     describe "#runner" do
       
-    end
-  end
-end
+#     end
+#   end
+# end

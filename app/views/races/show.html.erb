@@ -1,7 +1,13 @@
+<%= link_to 'Runners Page', "/runners" %>
+<%= link_to 'Races Page', "/races" %>
+<%= link_to 'Races Runners Page', "/races/#{@race.id}/runners" %>
 <h1><%= @race.location %></h1>
-<p>Terrain: <%= @race.terrain %></p>
-<p>Weather: <%= @race.weather %></p>
-<p>Length: <%= @race.length %></p>
-<p>Overnight: <%= @race.overnight %></p>
+<h3> Runner Count: <%= @race.runners.count %> </h3>
+    <p>Terrain:   <%= @race.terrain %></p>
+    <p>Weather:   <%= @race.weather %></p>
+    <p>Length:    <%= @race.length %></p>
+    <p>Loop:      <%= @race.loop? %></p>
+    <p>Overnight: <%= @race.overnight %></p>
+
 
 
