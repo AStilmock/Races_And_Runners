@@ -3,9 +3,26 @@ class RacesController < ApplicationController
     @races = Race.all.order(created_at: :desc)
   end
 
+  def new
+    
+  end
+
   def show
-    # require 'pry'; binding.pry
     @race = Race.find(params[:id])
-    # require 'pry'; binding.pry
+  end
+
+  
+
+  def create
+    race = Race.new({
+      location:  params[:race][:location],
+      terrain:   params[:race][:terrain],
+      weather:   params[:race][:weather],
+      length:    params[:race][:length],
+      loop:      params[:race][:loop],
+      overnight: params[:race][:overnight]
+      })
+    race.save
+    redirect_to '/races'
   end
 end
