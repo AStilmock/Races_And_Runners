@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   get "/runners", to: "runners#index"
   get "/runners/:id", to: "runners#show"
   get "races/:id/runners", to: "races_runners#index"
-  
+  get "races/:id/edit", to: "races#edit"
+  patch "races/:id", to: "races#update"
+  get "races/:id:runners/new", to: "races_runners#new"
 end

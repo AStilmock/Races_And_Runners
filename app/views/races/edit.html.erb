@@ -1,7 +1,8 @@
-<form action="/races" method="post">
+<form action="/races/<%= @race.id %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p> Add Race: </p>
-    Location:<input type='text' name='race[location]'/><br/>
+  <input type="hidden" name="_method" value="PATCH" />
+  <p> Update Race Info: </p>
+    Location:<input type='text' name='race[location]' value="<%= @race.location %>"/><br/>
      Terrain:<textarea name='race[terrain]'></textarea><br/>
      Weather:<textarea name='race[weather]'></textarea><br/>
       Length:<textarea name='race[length]'></textarea><br/>
