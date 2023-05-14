@@ -1,0 +1,11 @@
+<form action="/races" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new Race:</p>
+    Location:   <input type='text' name='race[location]'/><br/>
+     Terrain:    <textarea name='race[terrain]'></textarea><br/>
+     Weather:    <textarea name='race[weather]'></textarea><br/>
+      Length:     <textarea name='race[length]'></textarea><br/>
+       Loop?:      <textarea name='race[loop]'></textarea><br/>
+  Overnight?: <textarea name='race[overnight]'></textarea><br/>
+  Create Race: <input type='submit'/>
+</form>

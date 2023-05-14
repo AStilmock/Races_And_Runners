@@ -1,6 +1,6 @@
-<%= link_to 'Runners Page', "/runners" %>
-<%= link_to 'Races Page', "/races" %>
-<%= link_to 'Races Runners Page', "/races/#{@race.id}/runners" %>
+<%= link_to 'Runners Page', "/runners" %><br/>
+<%= link_to 'Races Page', "/races" %><br/>
+<%= link_to 'Races Runners Page', "/races/#{@race.id}/runners" %><br/>
 <h1><%= @race.location %></h1>
 <h3> Runner Count: <%= @race.runners.count %> </h3>
     <p>Terrain:   <%= @race.terrain %></p>

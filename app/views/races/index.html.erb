@@ -1,5 +1,6 @@
-<%= link_to 'Runners Page', "/runners#index" %>
-<%= link_to 'Races Page', "/races#index" %>
+<%= link_to 'Runners Page', "/runners" %> <br/>
+<%= link_to 'Races Page', "/races" %> <br/>
+<%= link_to 'New Race', "/races/new" %> <br/>
 <h1>Races</h1>
 <% @races.each do |race| %>
   <h3><%= race.location %></h3>
