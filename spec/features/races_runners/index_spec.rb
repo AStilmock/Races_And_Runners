@@ -37,6 +37,10 @@ RSpec.describe "runners show" do
   end
 
   it "has link to create new runner" do
-    
+    visit "/races/#{@race1.id}/runners"
+    expect(page).to have_link("Create Runner")
+
+    click_on "Create Runner"
+    expect(current_path).to eq("/races/#{@race1.id}/runners/new")
   end
 end

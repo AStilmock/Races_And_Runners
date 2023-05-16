@@ -15,6 +15,17 @@ RSpec.describe "runners show" do
   end
 
   it "creates new runner for race" do
+    "/races/#{@race1.id}/runners/new"
 
+    fill_in "runner[name]", with: "Billy Bob"
+    fill_in "runner[shoes]", with: "test"
+    fill_in "runner[spikes]", with: false
+    fill_in "runner[team]", with: false
+    fill_in "runner[races_completed]", with: 0
+  
+    click_button
+
+    expect(current_path).to eq("/races/#{@race1.id}/runners")
+    expect(page).to have_content("Billy Bob")
   end
 end
