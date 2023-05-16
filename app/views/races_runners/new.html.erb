@@ -1,16 +1,10 @@
-<%= form_with url: "/runners/#{@race.id}/runners.new", method: post, local: true, do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :shoes %>
-  <%= form.text_field :shoes %>
-  <%= form.label :spikes %>
-  <%= form.text_field :spikes %>
-  <%= form.label :team %>
-  <%= form.text_field :team %>
-  <%= form.label :races_completed %>
-  <%= form.text_field :races_completed %>
-  <%= form.label :race_id %>
-  <%= form.text_field :race_id %>
-
-  <%= form.submit "Create Runner" %>
-<% end %>
+<form action="/runners" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p> Add Runner: </p>
+           Name:<input type='text' name='runner[name]'/><br/>
+          Shoes:<textarea name='runner[shoes]'></textarea><br/>
+        Spikes?:<textarea name='runner[spikes]'></textarea><br/>
+          Team?:<textarea name='runner[team]'></textarea><br/>
+Races Completed:<textarea name='runner[races_completed]'></textarea><br/>
+Add Runner: <input type='submit'/>
+</form>

@@ -22,6 +22,6 @@ class RunnersController < ApplicationController
   private
 
   def runner_params
-    params.permit(:name, :shoes, :spikes, :team, :races_completed, :race_id)
+    params.permit(:name, :shoes, :spikes, :team, :races_completed)
   end
 end
