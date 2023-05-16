@@ -1,8 +1,6 @@
 require "rails_helper"
 
-describe Race, type: :model do
-  it {should have_many :runners}
-
+RSpec.describe "runners show" do
   before :each do
     @race1 = Race.create!(location: "Denver", terrain: "trail_gravel_dry", weather: "cloudy", length: 26, loop: true, overnight: true)
     @race2 = Race.create!(location: "Estes Park", terrain: "trail_pavement_dry", weather: "sunny", length: 6, loop: false, overnight: false)
@@ -15,20 +13,22 @@ describe Race, type: :model do
     @runner5 = @race3.runners.create!(name: "Alex", shoes: "Nike", spikes: true, team: false, races_completed: 0)
     @runner6 = @race3.runners.create!(name: "Ryan", shoes: "Adidas", spikes: false, team: false, races_completed:55)
   end
-  
-  describe "race instances" do
-    it "has race attributes" do
-      expect(@race1.location).to eq("Denver")
-      expect(@race1.weather).to eq("cloudy")
-      expect(@race2.terrain).to eq("trail_pavement_dry")
-      expect(@race2.length).to eq(6)
-      expect(@race3.loop?).to eq(true)
-      expect(@race4.overnight?).to eq(false)
-    end
 
-    it "counts race runners" do
-      expect(@race1.runners).to eq([@runner1, @runner2])
-      expect(@race1.runners.count).to eq(2)
-    end
+  it "displays runners by name" do
+    visit "/runners/#{@runner1.id}"
+
+    expect(page).to have_content(@runner1.name)
+    expect(page).to have_content(@runner1.shoes)
+    expect(page).to have_content(@runner1.spikes)
+    expect(page).to have_content(@runner1.team)
+    expect(page).to have_content(@runner1.races_completed)
+    expect(page).to have_content(@runner1.race_id)
+  end
+
+  it "has link to runners index page" do
+    visit "/runners/#{@runner1.id}"
+
+    expect(page).to have_link("Runners Page")
+    expect(page).to have_link("Races Page")
   end
 end

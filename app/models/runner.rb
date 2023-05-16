@@ -1,3 +1,3 @@
 class Runner < ApplicationRecord
-  belongs_to :race, optional: true
+  belongs_to :race
 end
