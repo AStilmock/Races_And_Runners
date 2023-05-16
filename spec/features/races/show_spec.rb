@@ -33,15 +33,32 @@ RSpec.describe "races show page" do
   end
 
   it "has link to index pages" do
-    visit "/races/#{@race1.id}"
+    visit "/races"
 
     expect(page).to have_link("Runners Page")
-    expect(page).to have_link("Races Page")
+    
+
+    click_on "Runners Page"
+    expect(current_path).to eq("/runners")
+    expect(page).to have_content(@runner1.name)
   end
 
-  it "has link to races_runners page" do
-    visit "/races/#{@race3.id}"
+  it "has link to index pages" do
+    visit "/races"
 
-    expect(page).to have_link("Races Runners Page")
+    expect(page).to have_link("Races Page")
+    
+
+    click_on "Races Page"
+    expect(current_path).to eq("/races")
+    expect(page).to have_content(@race1.location)
+  end
+
+  it "edit races" do
+    visit "/races/#{@race1.id}"
+    expect(page).to have_link("Update Race Info")
+
+    click_on "Update Race Info"
+    expect(current_path).to eq("/races/#{@race1.id}/edit")
   end
 end
