@@ -1,0 +1,16 @@
+<%= form_with url: "/runners", method: post, local: true, do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :shoes %>
+  <%= form.text_field :shoes %>
+  <%= form.label :spikes %>
+  <%= form.text_field :spikes %>
+  <%= form.label :team %>
+  <%= form.text_field :team %>
+  <%= form.label :races_completed %>
+  <%= form.text_field :races_completed %>
+  <%= form.label :race_id %>
+  <%= form.text_field :race_id %>
+
+  <%= form.submit "Create Runner" %>
+<% end %>
