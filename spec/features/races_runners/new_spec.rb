@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'Races Index' do
+RSpec.describe "runners show" do
   before :each do
     @race1 = Race.create!(location: "Denver", terrain: "trail_gravel_dry", weather: "cloudy", length: 26, loop: true, overnight: true)
     @race2 = Race.create!(location: "Estes Park", terrain: "trail_pavement_dry", weather: "sunny", length: 6, loop: false, overnight: false)
@@ -14,49 +14,7 @@ RSpec.describe 'Races Index' do
     @runner6 = @race3.runners.create!(name: "Ryan", shoes: "Adidas", spikes: false, team: false, races_completed:55)
   end
 
-  it "shows all race locations" do
-    visit "/races"
-    
-    expect(page).to have_content(@race1.location)
-    expect(page).to have_content(@race2.location)
-  end
+  it "creates new runner for race" do
 
-  it "has records listed by created_at" do
-    visit "/races"
-
-    expect(@race4.location).to appear_before(@race3.location)
-    expect(@race2.location).to appear_before(@race1.location)
-    expect(page).to have_content(@race4.created_at)
-    expect(page).to have_content(@race2.created_at)
-  end
-
-  it "has link to index pages" do
-    visit "/races"
-
-    expect(page).to have_link("Runners Page")
-    
-
-    click_on "Runners Page"
-    expect(current_path).to eq("/runners")
-    expect(page).to have_content(@runner1.name)
-  end
-
-  it "has link to index pages" do
-    visit "/races"
-
-    expect(page).to have_link("Races Page")
-    
-
-    click_on "Races Page"
-    expect(current_path).to eq("/races")
-    expect(page).to have_content(@race1.location)
-  end
-
-  it "creates new races" do
-    visit "/races"
-    expect(page).to have_link("New Race")
-
-    click_on "New Race"
-    expect(current_path).to eq("/races/new")
   end
 end

@@ -1,4 +1,4 @@
-<%= form_with url: "/runners", method: post, local: true, do |form| %>
+<%= form_with url: "/runners/#{@race.id}/runners.new", method: post, local: true, do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
   <%= form.label :shoes %>

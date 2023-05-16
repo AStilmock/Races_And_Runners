@@ -25,10 +25,18 @@ RSpec.describe "runners show" do
     expect(page).to have_content(@runner4.race_id)
   end
 
-  it "has link to index pages" do
-    visit "/races/#{@race2.id}/runners"
+  it "has link to races_runners page" do
+    visit "/races/#{@race3.id}"
 
-    expect(page).to have_link("Runners Page")
-    expect(page).to have_link("Races Page")
+    expect(page).to have_link("Races Runners Page")
+
+    click_on "Races Runners Page"
+    expect(current_path).to eq("/races/#{@race3.id}/runners")
+    expect(page).to have_content(@runner5.name)
+    expect(page).to have_content(@runner6.name)
+  end
+
+  it "has link to create new runner" do
+    
   end
 end
